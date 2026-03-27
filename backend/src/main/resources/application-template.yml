@@ -14,6 +14,8 @@ spring:
     # session失效时间，这里设置为一天
     # 一天没进行任何的操作就会失效了
     timeout: 86400
+  profiles:
+    active: dev
 server:
   port: 8080
   servlet:
