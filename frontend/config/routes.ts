@@ -28,7 +28,6 @@
     name: '管理页',
     icon: 'crown',
     access: 'canAdmin',
-    lazy: false, // 新增：关闭整个/admin路由的懒加载，避免chunk生成
     routes: [
       // {path: '/admin', redirect: '/admin/sub-page'},
       // {path: '/admin/sub-page', name: '二级管理页', component: './Admin'},
