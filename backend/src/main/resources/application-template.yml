@@ -1,0 +1,31 @@
+# 复制以下配置到applicaiton.yml中
+spring:
+  application:
+    name: smart-resume-builder
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 要替换
+    url: jdbc:mysql://localhost:3306/xxx  => 填你自己数据库和表
+    # 要替换
+    username: => 数据库用户名
+    # 要替换
+    password: => 数据库密码
+  session:
+    # session失效时间，这里设置为一天
+    # 一天没进行任何的操作就会失效了
+    timeout: 86400
+  profiles:
+    active: dev
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印SQL到控制台
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除字段名(deleted为实体类属性名称)
+      logic-delete-value: 1 # 逻辑已删除值。可选，默认值为 1
+      logic-not-delete-value: 0 # 逻辑未删除值。可选，默认值为 0
