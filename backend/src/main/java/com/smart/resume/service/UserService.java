@@ -7,7 +7,7 @@ import com.smart.resume.model.domain.request.AdminUserUpdateRequest;
 import com.smart.resume.model.domain.request.UserQueryRequest;
 import com.smart.resume.model.domain.request.UserUpdateRequetst;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * 用户服务接口

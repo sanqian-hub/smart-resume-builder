@@ -9,7 +9,7 @@ import com.qcloud.cos.region.Region;
 import com.smart.resume.config.CosConfig;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.io.InputStream;
 import java.util.UUID;
 
