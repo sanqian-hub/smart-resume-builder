@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
@@ -201,8 +201,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         // 移除用户登录态
         // TODO - 用户注销这种操作其实不需要返回数据
         // 直接用BaseResponse包装，有code和message就足够了
-        request.getSession().removeAttribute
-                (UserConstant.USER_LOGIN_STATE);
+        request.getSession().invalidate();
         return 1;
     }
 
