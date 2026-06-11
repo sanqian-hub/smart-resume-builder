@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/smart_resume?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: "your-db-password"
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+app:
+  frontend-url: http://localhost:5173
+  mail:
+    from-name: SmartResume 智能简历
+
+#resume:
+#  recall:
+#    enabled: true                # 是否开启简历召回邮件定时任务
+#    scan-cron: "0 * * * * ?"     # 定时任务执行周期：当前为每 1 分钟执行一次
+#    stale-threshold-minutes: 1   # 简历未更新阈值（分钟）：当前为 1 分钟未更新就进入召回候选
+#    cooldown-minutes: 1          # 邮件冷却期（分钟）：当前为同一用户 5 分钟内最多收到 1 次召回邮件
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

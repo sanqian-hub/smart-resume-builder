@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: backend
+
+  profiles:
+    active: dev
+  session:
+    timeout: 604800
+
+  # QQ邮箱 SMTP（打开 QQ邮箱 → 设置 → 账户 → POP3/SMTP 服务 → 生成授权码）
+  # 若用网易邮箱，改 host 为 smtp.163.com
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: your-email@qq.com
+    password: your-smtp-auth-code
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      mail.smtp.socketFactory.port: 465
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+
+deepseek:
+  api-key: your-deepseek-api-key
+  base-url: https://api.deepseek.com
+
+server:
+  port: 8080
+
+cos:
+  secretId: "your-cos-secret-id"
+  secretKey: "your-cos-secret-key"
+  region: ap-guangzhou
+  bucket: your-bucket-name
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      column-underline: false
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# 简历召回邮件定时任务相关配置
+resume:
+  recall:
+    enabled: true                # 是否开启简历召回邮件定时任务
+    scan-cron: "0 0 2 * * ?"     # 定时任务执行周期：当前为每天凌晨 2 点执行一次
+    stale-threshold-minutes: 10080 # 简历未更新阈值（分钟）：当前为 7 天未更新就进入召回候选
+    cooldown-minutes: 10080      # 邮件冷却期（分钟）：当前为同一用户 7 天内最多收到 1 次召回邮件

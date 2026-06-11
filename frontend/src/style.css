@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chillax';
+  src: url('/fonts/Chillax-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: rgb(70, 114, 242);
+  --primary-hover: rgb(55, 95, 210);
+  --primary-light: #eef2ff;
+  --primary-bg: #f0f0ff;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --success: #10b981;
+  --text-1: #111827;
+  --text-2: #4b5563;
+  --text-3: #9ca3af;
+  --border: #e5e7eb;
+  --bg-page: #f3f4f6;
+  --bg-card: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: 'LXGW WenKai', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-1);
+  background: var(--bg-page);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.page-scroll-stable {
+  scrollbar-gutter: stable;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, select, button {
+  font-family: inherit;
+}
+
+#app {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#app.loaded {
+  opacity: 1;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

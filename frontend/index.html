@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" />
+    <title>智能简历 - SmartResume</title>
+    <style>
+      [v-cloak]{display:none}
+      #app-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#f3f4f6;z-index:99999;transition:opacity .4s ease}
+      #app-loader.hide{opacity:0;pointer-events:none}
+      #app-loader svg{animation:spin 1s linear infinite;color:#4f72f6}
+      @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
+  </head>
+  <body>
+    <div id="app-loader">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+    </div>
+    <div id="app" v-cloak></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
